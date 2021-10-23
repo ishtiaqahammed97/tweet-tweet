@@ -29,6 +29,15 @@ function getDataFromLocalStorage() {
     return tweets;
 }
 
+function deleteDataFromLocalStorage(id) {
+    let tweets = JSON.parse(localStorage.getItem("totalTweets"));
+    let result = tweets.filter(tweet => {
+        return tweet.id !== id
+    })
+    localStorage.setItem("totalTweets", JSON.stringify(result));
+    if(result.length === 0) location.reload();
+}
+
 // get tweet data from allTweetData
 function showTweetData(tweetList) {
     let li = "";
@@ -91,6 +100,7 @@ function deleteTweet(e) {
             return tweets.id !== id;
         })
         allTweetData = result;
+        deleteDataFromLocalStorage(id)
     }
 }
 
