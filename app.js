@@ -48,7 +48,7 @@ function showTweetData(tweetList) {
         li = document.createElement("li");
         li.className = "collection-item";
         li.id = `tweet-${tweet.id}`
-        li.innerHTML = `<strong>${tweet.tweet}</strong>  <button class="delete-tweet"> Delete</button>`
+        li.innerHTML = `<strong>${tweet.tweet}</strong>  <button class="delete-tweet"> Delete</button> <span>${tweet.time} </span>`
 
         tweetListUl.appendChild(li)
         message.innerHTML = '';
@@ -60,6 +60,9 @@ showTweetData(allTweetData);
 function getTweetInput(e) {
     tweetListUl.innerHTML = '';
     const tweet = submitInput.value;
+    const getMinutes = new Date().getMinutes();
+    const getHour = new Date().getHours();
+    const time = getHour + ':' + getMinutes;
 
     // getting id
     let id;
@@ -74,7 +77,8 @@ function getTweetInput(e) {
     } else {
         const data = {
             id: id,
-            tweet: tweet
+            tweet: tweet,
+            time: time
         }
         allTweetData.push(data);
 
