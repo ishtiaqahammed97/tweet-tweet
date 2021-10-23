@@ -1,0 +1,43 @@
+.header {
+    border-bottom: 2px solid grey;
+    /* border-bottom-width: 2px; */
+    margin-top: 10px;
+}
+
+.container {
+    display: flex;
+    margin-top: 200px;
+}
+
+.first-div {
+    border: 2px solid gray;
+    height: 300px;
+    width: 45%;
+    padding: 100px;
+}
+.second-div {
+    border: 2px solid gray;
+    height: 300px;
+    width: 45%;
+    margin-left: 5px;
+    padding: 100px;
+}
+
+.search-input {
+    margin-left: 640px;
+    width: 36%;
+    margin-top: 140px;
+    position: absolute;
+    border: 2px solid gray;
+}
+
+.message {
+    margin-left: 640px;
+    margin-top: 200px;
+    position: absolute;
+}
+.submit-btn {
+    position: absolute;
+    margin-top:5px;
+    width: 14%;
+}
