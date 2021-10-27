@@ -36,7 +36,9 @@ function deleteDataFromLocalStorage(id) {
         return tweet.id !== id
     })
     localStorage.setItem("totalTweets", JSON.stringify(result));
-    if (result.length === 0) location.reload();
+    if (result.length === 0) {
+        message.innerHTML = "Write your tweet";
+    }
 }
 
 // get tweet data from allTweetData
